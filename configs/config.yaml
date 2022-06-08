@@ -1,0 +1,10 @@
+mysql:
+    host: rm-2vcs5tko1939j1j91bo.mysql.cn-chengdu.rds.aliyuncs.com
+    port: 3306
+    user: wang
+    password: wang123**
+    database: mytest
+    debug: true
+app:
+    ip: 0.0.0.0
+    port: 8080
