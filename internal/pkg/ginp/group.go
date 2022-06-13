@@ -46,12 +46,8 @@ func (g *Group) DELETE(relativePath string, handler IHandlerFunc, middleware ...
 	handlers := g.mergeHandlers(handler, middleware...)
 	g.Handle(http.MethodDelete, relativePath, handlers...)
 }
-func (g *Group) Bind(relativePath string, handler interface{}, middleware ...gin.HandlerFunc) {
-	handlers := g.mergeHandlers(handler, middleware...)
-	g.Handle(http.MethodPost, relativePath, handlers...)
-}
 
-func (g *Group) Bind2(handlerOrObject ...interface{}) {
+func (g *Group) Bind(handlerOrObject ...interface{}) {
 	for _, v := range handlerOrObject {
 		reflectType := reflect.TypeOf(v)
 		reflectValue := reflect.ValueOf(v)
@@ -60,7 +56,6 @@ func (g *Group) Bind2(handlerOrObject ...interface{}) {
 		case reflect.Func:
 			err := checkHandlerFunc(reflectValue.Interface())
 			if err != nil {
-
 				fmt.Println(err.Error())
 				panic(err)
 			}

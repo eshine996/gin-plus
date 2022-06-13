@@ -1,8 +1,9 @@
 package ginp
 
 import (
-	"fmt"
 	"github.com/spf13/viper"
+	"os"
+	"strings"
 )
 
 const (
@@ -10,22 +11,34 @@ const (
 	DefaultConfigType = "yaml"
 )
 
-func NewConfig() *inConfig {
+func NewConfig() *iConfig {
+	vp := viper.New()
+	vp.SetConfigType(DefaultConfigType)
+	vp.AddConfigPath(DefaultConfigDir)
+	vp.AddConfigPath(".")
 
-	v := viper.New()
-	v.SetConfigType(DefaultConfigType)
-	v.AddConfigPath(DefaultConfigDir)
-	v.AddConfigPath(".")
-
-	if err := v.ReadInConfig(); err != nil {
-		fmt.Println(err.Error())
-		panic(err.Error())
-	}
-	return &inConfig{
-		v,
+	return &iConfig{
+		vp,
 	}
 }
 
-type inConfig struct {
+type iConfig struct {
 	*viper.Viper
+}
+
+func FormatEnvKey(s string) string {
+	return strings.ToUpper(strings.Replace(s, ".", "_", -1))
+}
+
+func (i *iConfig) ReadData() error {
+	return i.ReadInConfig()
+}
+
+func (i *iConfig) GetWithEnv(key string) interface{} {
+	v := os.Getenv(FormatEnvKey(key))
+	if len(v) > 0 {
+		return v
+	} else {
+		return i.Get(key)
+	}
 }

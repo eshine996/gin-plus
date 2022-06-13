@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	r "gin-plus/internal/cmd"
 	"github.com/spf13/cobra"
 )
@@ -20,7 +19,6 @@ var startCmd = &cobra.Command{
 	Short: "start project",
 	Long:  "start project",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(config)
-		r.TestStart()
+		r.Run()
 	},
 }
