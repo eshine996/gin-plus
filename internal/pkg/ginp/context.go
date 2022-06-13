@@ -92,7 +92,18 @@ func handlerWithUserInfoWrapper(handler interface{}) gin.HandlerFunc {
 			requestBodyType := handlerType.In(1).Elem()
 			requestBodyValue := reflect.New(requestBodyType)
 
-			//验证参数 这里应该支持form/query/json/xml等格式的验证 使用content-Type和method todo
+			//验证参数
+			if ctx.Request.Method == http.MethodGet {
+				if err := ctx.ShouldBindQuery(requestBodyValue.Interface()); err != nil {
+					ctx.JSON(http.StatusBadRequest, gin.H{
+						"code":    http.StatusBadRequest,
+						"message": err.Error(),
+						"error":   err.Error(),
+					})
+					return
+				}
+			}
+
 			if err := ctx.ShouldBindJSON(requestBodyValue.Interface()); err != nil {
 				ctx.JSON(http.StatusBadRequest, gin.H{
 					"code":    http.StatusBadRequest,
