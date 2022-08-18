@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="918cc21e-6f7c-4016-8ec5-c6c90deae67b" name="Changes" comment="first commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/start.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/start.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/cmd/demo.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cmd/demo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/pkg/ginp/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/pkg/ginp/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/pkg/ginp/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/pkg/ginp/global.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/pkg/ginp/group.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/pkg/ginp/group.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +19,11 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://C:/Program Files/Go" />
+  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.17.11" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/go/pkg/mod/github.com/spf13/viper@v1.12.0/viper.go" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/cmd/start.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/cmd/version.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/configs/config.yaml" root0="FORCE_HIGHLIGHTING" />
@@ -63,14 +55,34 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "E:/personal/gin-plus",
+    "last_opened_file_path": "D:/go-demo/gin-plus/internal/pkg",
     "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\go-demo\gin-plus\internal\pkg" />
       <recent name="E:\personal\gin-plus" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="gin-plus" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="gin-plus" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
